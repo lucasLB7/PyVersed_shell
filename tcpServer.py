@@ -9,7 +9,7 @@ def socket_create():
         global port
         global s
         host = ''
-        port = 9995
+        port = 9991
         s = socket.socket()
     except socket.error as msg:
         print("Socket creation error: " + str(msg))
@@ -50,7 +50,8 @@ def send_commands(conn):
                 conn.send(str.encode(cmd))
                 client_response = str(conn.recv(1024), "utf-8")
                 print(client_response)
-        except Exception,e: print str(e)
+        except:
+            print("nop")
 
 
 def main():
